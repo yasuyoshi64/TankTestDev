@@ -88,19 +88,19 @@ pass=[Wi-Fi Password]
 * QRコードは30秒で消灯します。GPIO0のボタンを押下すると再度30秒表示されます。
 * SDカードは電源ON中でも抜き差し可能です。
 
-FA-130モーターは無負荷で70%くらいから回転を始めます。一度回転を始めれば40%くらいまで落としても回転します。
-60% = 9000RPM ～　100% = 19000RPM
+## 外観
+タミヤの楽しい工作シリーズのタンク工作基本セットを改造して乗っけてます。
+![外観](https://github.com/yasuyoshi64/blogger_images/blob/202405/TankTestDev1.jpg?raw=true)
 
 ## 回路図
 
 ![回路図](https://github.com/yasuyoshi64/MotorX2ControlExample/blob/main/MotorX2ControlExample.png?raw=true)
 
 ## Web画面
+![Web画面](https://github.com/yasuyoshi64/blogger_images/blob/202405/TankTestDevController.jpg?raw=true)
 
-![Web画面](https://github.com/yasuyoshi64/MotorX2ControlExample/blob/main/MotorX2ControlExampleWeb.png?raw=true)
-
-スライダーを動かすことでモーターを操作できます。
-Saveボタンは何も機能しません。
+コントローラは見ればわかるかと。
+Steering Trimはモーター2個で直進する関係上左右どちらかに寄ってしまうので、それを補正するためのトリムになります。
 
 # _Sample project_
 
