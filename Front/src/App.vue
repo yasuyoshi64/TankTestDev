@@ -79,14 +79,14 @@ function ws_send() {
 }
 
 onMounted(() => {
-  // フリックでの画面スクロールを禁止する
-  document.body.addEventListener('touchmove', function(event) {
-    event.preventDefault();   // デフォルト動作の禁止
-  }, { passive: false})
-  // マウスホイールによる画面スクロールを禁止する
-  document.body.addEventListener('wheel', function(event) {
-    event.preventDefault();   // デフォルト動作の禁止
-  }, { passive: false})
+  // // フリックでの画面スクロールを禁止する
+  // document.body.addEventListener('touchmove', function(event) {
+  //   event.preventDefault();   // デフォルト動作の禁止
+  // }, { passive: false})
+  // // マウスホイールによる画面スクロールを禁止する
+  // document.body.addEventListener('wheel', function(event) {
+  //   event.preventDefault();   // デフォルト動作の禁止
+  // }, { passive: false})
 
   // データ取得
   axios
@@ -143,18 +143,18 @@ const controlHeight = computed(() => {
     </div>
     <div class="flex-container">
       <div class="flex-item">
-        <ControlBall direction="vertical" :min="-100" :max="100" :width="controlHeight" v-model="speedData"/>
+        <ControlBall direction="vertical" :min="-100" :max="100" height="100%" :width="controlHeight" v-model="speedData"/>
       </div>
       <div class="flex-item">
-        <div style="height: 15vh;">
+        <div style="height: 25vh;">
         </div>
-        <div style="height: 30vh;">
+        <div style="height: 40vh;">
           <ControlBall direction="horizontal" :min="-100" :max="100" :width="controlWidth" height="110" v-model="steeringData"/><br/>
         </div>
-        <div style="height: 55vh; position: relative; text-align: center;">
+        <div style="height: 35vh; position: relative; text-align: center;">
           <div style="position: absolute; bottom: 5em;">
             Steering Trim<br/>
-            <ControlBall direction="horizontal" :min="-100" :max="100" type="fixed" :width="controlWidth" height="40" :ballweight="20" :lineWidth="50" v-model="steeringTrimData"/>
+            <ControlBall direction="horizontal" :min="-100" :max="100" type="fixed" :width="controlWidth" height="50" :ballweight="20" :lineWidth="50" v-model="steeringTrimData"/>
           </div>
         </div>
       </div>
@@ -172,23 +172,19 @@ html, body {
 }
 
 .flex-container {
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .flax-item {
-  height: 100vh;
+  height: 95vh;
   width: 50vw;
-  /* position: relative; */
 }
-
-/* .steering {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
 
 </style>
